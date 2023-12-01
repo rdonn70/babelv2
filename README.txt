@@ -1,0 +1,1 @@
+Phoneme CSV used from: https://github.com/open-dict-data/ipa-dict#csv
