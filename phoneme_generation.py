@@ -1,4 +1,6 @@
 import random
+import os
+import re
 import csv
 
 def csv_scraper(csv_file_path="en_US.csv"):
@@ -80,5 +82,11 @@ def language(min_phonemes=12, max_phonemes=40):
     return dict(zip(old_language, new_language))
 
 if __name__ == "__main__":
+    os.system('cls' if os.name == 'nt' else 'clear')
     dictionary = language()
-    print(dictionary["color"])
+    input_sentence = input("Enter a sentence to translate: ")
+    input_sentence = re.sub(r'[^\w\s]','',input_sentence)
+    
+    sentence = input_sentence.split()
+    for x in sentence:
+        print(dictionary[x.strip().lower()], end=" ")
